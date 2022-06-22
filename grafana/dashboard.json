@@ -73,7 +73,7 @@
   "gnetId": 14544,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1655712372413,
+  "iteration": 1655892020946,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -138,7 +138,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_node_synced{application=\"chia-blockchain\"}",
+          "expr": "chia_full_node_node_synced",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
@@ -204,7 +204,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(chia_plot_size{type=\"$PlotType\"})+SL",
+          "expr": "sum(chia_harvester_plot_filesize{type=\"$PlotType\"})",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
@@ -272,7 +272,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(chia_harvester_total_plots)",
+          "expr": "sum(chia_harvester_total_${PlotType}_plots)",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
@@ -531,7 +531,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{application=\"chia-blockchain\", node_type=\"full_node\"}",
+          "expr": "chia_full_node_connection_count{node_type=\"full_node\"}",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
@@ -594,7 +594,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{application=\"chia-blockchain\", node_type=\"farmer\"}",
+          "expr": "chia_full_node_connection_count{node_type=\"farmer\"}",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
@@ -657,7 +657,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{application=\"chia-blockchain\", node_type=\"wallet\"}",
+          "expr": "chia_full_node_connection_count{node_type=\"wallet\"}",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
@@ -717,7 +717,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(chia_plot_size{type=\"$PlotType\"})+SL",
+          "expr": "sum(chia_harvester_plot_filesize{type=\"$PlotType\"})",
           "interval": "1m",
           "legendFormat": "Plot Size",
           "refId": "A"
@@ -777,7 +777,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(chia_harvester_total_plots)",
+          "expr": "sum(chia_harvester_total_${PlotType}_plots)",
           "interval": "1m",
           "legendFormat": "Plot Count",
           "refId": "A"
@@ -837,13 +837,13 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "18.75 / ((sum(chia_harvester_total_plots) * 101000) / sum(chia_full_node_netspace_mib))",
+          "expr": "18.75 / ( (sum(chia_harvester_plot_filesize)/1048576) / sum(chia_full_node_netspace_mib) )",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Expected Time To Win (k32 only)",
+      "title": "Expected Time To Win",
       "type": "stat"
     },
     {
@@ -959,7 +959,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_netspace_mib{application=\"chia-blockchain\"}",
+          "expr": "chia_full_node_netspace_mib",
           "interval": "1m",
           "legendFormat": "Netspace",
           "refId": "A"
@@ -1088,7 +1088,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "rate(chia_full_node_total_signage_points{application=\"chia-blockchain\"}[5m]) * 60",
+          "expr": "rate(chia_full_node_total_signage_points[5m]) * 60",
           "interval": "1m",
           "legendFormat": "Challanges",
           "refId": "A"
@@ -1147,7 +1147,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_+SL",
+          "expr": "chia_harvester_plot_filesize{type=\"$PlotType\"}",
           "interval": "1m",
           "legendFormat": "{{ node_id }}",
           "refId": "A"
@@ -1207,7 +1207,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_node_height{application=\"chia-blockchain\"}",
+          "expr": "chia_full_node_node_height",
           "interval": "1m",
           "legendFormat": "Height",
           "refId": "A"
@@ -1267,7 +1267,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_difficulty{application=\"chia-blockchain\"}",
+          "expr": "chia_full_node_difficulty",
           "interval": "1m",
           "legendFormat": "Difficulty",
           "refId": "A"
@@ -1631,7 +1631,7 @@
           "exemplar": true,
           "expr": "rate(chia_block_challenges_total[5m]) * 60+SL",
           "interval": "1m",
-          "legendFormat": "Challanges",
+          "legendFormat": "Challenges",
           "refId": "A"
         }
       ],
@@ -1688,7 +1688,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_harvester_total_plots{application=\"chia-blockchain\"}",
+          "expr": "chia_harvester_total_${PlotType}_plots",
           "interval": "1m",
           "legendFormat": "{{ node_id }}",
           "refId": "A"
@@ -1746,7 +1746,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "round(avg_over_time(chia_full_node_mempool_size{application=\"chia-blockchain\"}[5m]))",
+          "expr": "round(avg_over_time(chia_full_node_mempool_size[5m]))",
           "instant": false,
           "interval": "1m",
           "intervalFactor": 1,
@@ -1808,7 +1808,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_mempool_cost{application=\"chia-blockchain\"}/1e12",
+          "expr": "chia_full_node_mempool_cost/1e12",
           "interval": "1m",
           "intervalFactor": 1,
           "legendFormat": "Mempool Cost",
@@ -2197,7 +2197,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "max(chia_harvester_last_lookup_time{application=\"chia-blockchain\"})",
+          "expr": "max(chia_harvester_last_lookup_time)",
           "hide": false,
           "instant": false,
           "interval": "1m",
@@ -2211,7 +2211,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "avg(sum(chia_harvester_last_lookup_time{application=\"chia-blockchain\"})/count(chia_harvester_last_lookup_time{application=\"chia-blockchain\"}))",
+          "expr": "avg(sum(chia_harvester_last_lookup_time)/count(chia_harvester_last_lookup_time))",
           "hide": false,
           "interval": "1m",
           "legendFormat": "Average",
@@ -2340,7 +2340,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_validation_time{application=\"chia-blockchain\"}",
+          "expr": "chia_full_node_validation_time",
           "hide": false,
           "interval": "1m",
           "legendFormat": "Block Validation Time",
@@ -2352,7 +2352,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_pre_validation_time{application=\"chia-blockchain\"}",
+          "expr": "chia_full_node_pre_validation_time",
           "hide": false,
           "interval": "1m",
           "intervalFactor": 1,
@@ -2371,7 +2371,27 @@
     "chia"
   ],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {},
+        "definition": "label_values(chia_harvester_plot_filesize, type)",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "PlotType",
+        "options": [],
+        "query": {
+          "query": "label_values(chia_harvester_plot_filesize, type)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 2,
+        "type": "query",
+        "datasource": "${DS_PROMETHEUS}"
+      }
+    ]
   },
   "time": {
     "from": "now-24h",
@@ -2388,6 +2408,6 @@
   "timezone": "",
   "title": "Chia Farm Dashboard",
   "uid": "cryptastic-chia-dashboard",
-  "version": 54,
+  "version": 70,
   "weekStart": ""
 }
