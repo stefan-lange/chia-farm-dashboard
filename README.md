@@ -21,9 +21,9 @@ and [Chia Price Exporter](https://github.com/stefan-lange/chia-price-exporter/) 
 
 In this example, metrics are available with the following endpoints:
 
-- '<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>:9914/price/metrics
-- '<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>:9914/farmer/metrics
-- '<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>:9914/harvester-1/metrics
+- `<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>`:9914/price/metrics
+- `<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>`:9914/farmer/metrics
+- `<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>`:9914/harvester-1/metrics
 
 Add a block to the `scrape_configs` of your `prometheus.yml` config file:
 
