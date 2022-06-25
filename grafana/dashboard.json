@@ -73,7 +73,7 @@
   "gnetId": 14544,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1655892020946,
+  "iteration": 1656062529224,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -294,6 +294,7 @@
           "decimals": 2,
           "mappings": [],
           "min": 0,
+          "noValue": "TODO",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -420,6 +421,7 @@
           "mappings": [],
           "max": 1,
           "min": 0,
+          "noValue": "TODO",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -854,6 +856,7 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "noValue": "TODO",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1149,7 +1152,7 @@
           "exemplar": true,
           "expr": "chia_harvester_plot_filesize{type=\"$PlotType\"}",
           "interval": "1m",
-          "legendFormat": "{{ node_id }}",
+          "legendFormat": "{{ node_id }} / k{{ size }}",
           "refId": "A"
         }
       ],
@@ -1466,6 +1469,7 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "noValue": "TODO",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1587,6 +1591,7 @@
           },
           "mappings": [],
           "min": 0,
+          "noValue": "TODO",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1826,6 +1831,8 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "min": 0,
+          "noValue": "0",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1858,7 +1865,9 @@
           "fields": "",
           "values": false
         },
-        "text": {},
+        "text": {
+          "titleSize": 1
+        },
         "textMode": "auto"
       },
       "pluginVersion": "8.4.4",
@@ -1995,9 +2004,10 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_price_usd_cent/100 * chia_confirmed_total_mojos/1e12",
+          "expr": "chia_price_usd_cent/100 * (sum(chia_wallet_confirmed_balance)/1e12)",
+          "format": "time_series",
           "interval": "1m",
-          "legendFormat": "Difficulty",
+          "legendFormat": "Total balance",
           "refId": "A"
         }
       ],
@@ -2408,6 +2418,6 @@
   "timezone": "",
   "title": "Chia Farm Dashboard",
   "uid": "cryptastic-chia-dashboard",
-  "version": 70,
+  "version": 74,
   "weekStart": ""
 }
