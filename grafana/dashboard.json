@@ -73,7 +73,7 @@
   "gnetId": 14544,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1656062529224,
+  "iteration": 1656344698000,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -911,12 +911,12 @@
       "type": "stat"
     },
     {
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
-          "decimals": 3,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -926,18 +926,17 @@
                 "value": null
               }
             ]
-          },
-          "unit": "mbytes"
+          }
         },
         "overrides": []
       },
       "gridPos": {
         "h": 3,
-        "w": 6,
+        "w": 2,
         "x": 12,
         "y": 6
       },
-      "id": 75,
+      "id": 125,
       "maxDataPoints": 999999,
       "options": {
         "colorMode": "background",
@@ -962,13 +961,137 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_netspace_mib",
+          "expr": "chia_full_node_node_height",
           "interval": "1m",
-          "legendFormat": "Netspace",
+          "legendFormat": "Height",
           "refId": "A"
         }
       ],
-      "title": "Chia Network Space",
+      "title": "Node Height",
+      "type": "stat"
+    },
+    {
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 3,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "orange",
+                "value": null
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 14,
+        "y": 6
+      },
+      "id": 136,
+      "maxDataPoints": 999999,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "exemplar": true,
+          "expr": "sum(chia_full_node_database_filesize)",
+          "interval": "1m",
+          "legendFormat": "Blockchain database size",
+          "refId": "A"
+        }
+      ],
+      "title": "Blockchain DB Size",
+      "type": "stat"
+    },
+    {
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 3,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "orange",
+                "value": null
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 16,
+        "y": 6
+      },
+      "id": 137,
+      "maxDataPoints": 999999,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "exemplar": true,
+          "expr": "increase(chia_full_node_database_filesize{node_id=\"farmer\"}[$__range])",
+          "interval": "1m",
+          "legendFormat": "Blockchain Database Growth Rate",
+          "refId": "A"
+        }
+      ],
+      "title": "Blockchain DB Growth Rate",
       "type": "stat"
     },
     {
@@ -1160,12 +1283,12 @@
       "type": "bargauge"
     },
     {
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
+          "decimals": 3,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1175,7 +1298,8 @@
                 "value": null
               }
             ]
-          }
+          },
+          "unit": "mbytes"
         },
         "overrides": []
       },
@@ -1185,7 +1309,7 @@
         "x": 12,
         "y": 9
       },
-      "id": 125,
+      "id": 75,
       "maxDataPoints": 999999,
       "options": {
         "colorMode": "background",
@@ -1210,13 +1334,13 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_node_height",
+          "expr": "chia_full_node_netspace_mib",
           "interval": "1m",
-          "legendFormat": "Height",
+          "legendFormat": "Netspace",
           "refId": "A"
         }
       ],
-      "title": "Node Height",
+      "title": "Chia Network Space",
       "type": "stat"
     },
     {
@@ -2418,6 +2542,6 @@
   "timezone": "",
   "title": "Chia Farm Dashboard",
   "uid": "cryptastic-chia-dashboard",
-  "version": 74,
+  "version": 75,
   "weekStart": ""
 }
