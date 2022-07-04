@@ -27,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.4.4"
+      "version": "8.5.6"
     },
     {
       "type": "datasource",
@@ -52,7 +52,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -73,11 +76,15 @@
   "gnetId": 14544,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1656344698000,
+  "iteration": 1656962527763,
   "links": [],
   "liveNow": false,
   "panels": [
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -130,7 +137,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -148,6 +155,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -195,7 +206,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "repeatDirection": "h",
       "targets": [
         {
@@ -217,6 +228,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -263,7 +278,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "repeatDirection": "h",
       "targets": [
         {
@@ -272,7 +287,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(chia_harvester_total_${PlotType}_plots)",
+          "expr": "sum(chia_harvester_plot_count{type=\"$PlotType\"})",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
@@ -285,6 +300,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -331,7 +350,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -349,6 +368,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -394,7 +417,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -412,6 +435,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -458,7 +485,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -476,6 +503,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -525,7 +556,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -543,6 +574,10 @@
       "type": "gauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -588,7 +623,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -606,6 +641,10 @@
       "type": "gauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -651,7 +690,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -669,6 +708,10 @@
       "type": "gauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -711,7 +754,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -729,6 +772,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -771,7 +818,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -779,7 +826,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(chia_harvester_total_${PlotType}_plots)",
+          "expr": "sum(chia_harvester_plot_count{type=\"$PlotType\"})",
           "interval": "1m",
           "legendFormat": "Plot Count",
           "refId": "A"
@@ -789,6 +836,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -831,7 +882,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -849,6 +900,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -893,7 +948,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -911,6 +966,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -953,7 +1012,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -971,6 +1030,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -988,7 +1051,7 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "decbytes"
         },
         "overrides": []
       },
@@ -1015,7 +1078,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1033,6 +1096,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1050,7 +1117,7 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "decbytes"
         },
         "overrides": []
       },
@@ -1077,7 +1144,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1085,7 +1152,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "increase(chia_full_node_database_filesize{node_id=\"farmer\"}[$__range])",
+          "expr": "sum(increase(chia_full_node_database_filesize[$__range]))",
           "interval": "1m",
           "legendFormat": "Blockchain Database Growth Rate",
           "refId": "A"
@@ -1095,6 +1162,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1138,7 +1209,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1156,6 +1227,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1195,6 +1270,8 @@
       "maxDataPoints": 999999,
       "options": {
         "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -1206,7 +1283,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1224,6 +1301,10 @@
       "type": "bargauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1254,6 +1335,8 @@
       "maxDataPoints": 999999,
       "options": {
         "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -1265,7 +1348,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1283,6 +1366,10 @@
       "type": "bargauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1326,7 +1413,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1344,6 +1431,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1386,7 +1477,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1404,6 +1495,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1447,7 +1542,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1466,6 +1561,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1508,7 +1607,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1516,7 +1615,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_current_pool_points{url=\"$Pool\"}+SL",
+          "expr": "chia_farmer_points_acknowledged_since_start",
           "interval": "1m",
           "legendFormat": "Difficulty",
           "refId": "A"
@@ -1526,6 +1625,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1568,7 +1671,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1586,6 +1689,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1630,7 +1737,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1648,6 +1755,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1679,6 +1790,8 @@
       "maxDataPoints": 999999,
       "options": {
         "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -1690,7 +1803,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1708,6 +1821,10 @@
       "type": "bargauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1739,6 +1856,8 @@
       "maxDataPoints": 999999,
       "options": {
         "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -1750,7 +1869,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1768,6 +1887,10 @@
       "type": "bargauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1798,6 +1921,8 @@
       "maxDataPoints": 999999,
       "options": {
         "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -1809,17 +1934,19 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_harvester_total_${PlotType}_plots",
+          "expr": "chia_harvester_plot_count{type=\"$PlotType\"}",
           "interval": "1m",
-          "legendFormat": "{{ node_id }}",
+          "legendFormat": "{{ node_id }} / k{{ size }}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1827,6 +1954,10 @@
       "type": "bargauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1867,7 +1998,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1887,6 +2018,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1929,7 +2064,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -1948,6 +2083,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1994,7 +2133,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -2013,6 +2152,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2057,7 +2200,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -2075,6 +2218,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2120,7 +2267,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -2128,7 +2275,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "chia_price_usd_cent/100 * (sum(chia_wallet_confirmed_balance)/1e12)",
+          "expr": "sum(chia_price_usd_cent)/100 * (sum(chia_wallet_confirmed_balance)/1e12)",
           "format": "time_series",
           "interval": "1m",
           "legendFormat": "Total balance",
@@ -2139,6 +2286,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2169,6 +2320,8 @@
       "maxDataPoints": 999999,
       "options": {
         "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -2180,7 +2333,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.4.4",
+      "pluginVersion": "8.5.6",
       "targets": [
         {
           "datasource": {
@@ -2188,7 +2341,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "rate(chia_farmer_submitted_partials[5m]) * 60",
+          "expr": "rate(chia_farmer_submitted_partials[1h]) * 60",
           "interval": "1m",
           "legendFormat": "Proofs",
           "refId": "A"
@@ -2198,6 +2351,10 @@
       "type": "bargauge"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2356,6 +2513,10 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2400,8 +2561,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
-                "value": null
+                "color": "transparent"
               },
               {
                 "color": "red",
@@ -2499,7 +2659,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 35,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "chia"
@@ -2508,6 +2668,10 @@
     "list": [
       {
         "current": {},
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
         "definition": "label_values(chia_harvester_plot_filesize, type)",
         "hide": 0,
         "includeAll": false,
@@ -2522,8 +2686,7 @@
         "regex": "",
         "skipUrlSync": false,
         "sort": 2,
-        "type": "query",
-        "datasource": "${DS_PROMETHEUS}"
+        "type": "query"
       }
     ]
   },
@@ -2542,6 +2705,6 @@
   "timezone": "",
   "title": "Chia Farm Dashboard",
   "uid": "cryptastic-chia-dashboard",
-  "version": 75,
+  "version": 83,
   "weekStart": ""
 }
