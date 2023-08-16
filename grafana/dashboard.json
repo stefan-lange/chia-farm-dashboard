@@ -1,53 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "Prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": [],
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "bargauge",
-      "name": "Bar gauge",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "gauge",
-      "name": "Gauge",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "8.5.6"
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "timeseries",
-      "name": "Time series",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -73,17 +24,16 @@
   "description": "Displays all important metrics from your Chia farming node and all connected harvesters, collected by the official chia-exporter. This dashboard is based on the great work made by philippnormann (https://grafana.com/grafana/dashboards/14544)",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 14544,
+  "gnetId": 16456,
   "graphTooltip": 1,
-  "id": null,
-  "iteration": 1656962527763,
+  "id": 23,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -137,17 +87,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_node_synced",
+          "expr": "avg by (node_id) (chia_full_node_node_synced)",
           "interval": "1m",
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -157,7 +109,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -206,20 +158,22 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "repeatDirection": "h",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
           "expr": "sum(chia_harvester_plot_filesize{type=\"$PlotType\"})",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
           "legendFormat": "",
+          "range": true,
           "refId": "A",
           "step": 240
         }
@@ -230,7 +184,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -278,20 +232,22 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "repeatDirection": "h",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
           "expr": "sum(chia_harvester_plot_count{type=\"$PlotType\"})",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
           "legendFormat": "",
+          "range": true,
           "refId": "A",
           "step": 240
         }
@@ -302,7 +258,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -350,12 +306,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "chia_farmed_total_mojos/1e12+SL",
@@ -370,7 +326,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -417,12 +373,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(chia_wallet_confirmed_balance)/1e12",
@@ -437,7 +393,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -485,12 +441,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "chia_pool_points_acknowledged_24h{url=\"$Pool\"} / chia_pool_points_found_24h{url=\"$Pool\"}+SL",
@@ -505,7 +461,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -556,17 +512,19 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{node_type=\"full_node\"}",
+          "expr": "avg by (node_id) (chia_full_node_connection_count{node_type=\"full_node\"})",
           "interval": "1m",
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -576,7 +534,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -623,17 +581,19 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{node_type=\"farmer\"}",
+          "expr": "avg by (node_id) (chia_full_node_connection_count{node_type=\"farmer\"})",
           "interval": "1m",
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -643,7 +603,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -690,17 +650,19 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{node_type=\"wallet\"}",
+          "expr": "avg by (node_id) (chia_full_node_connection_count{node_type=\"wallet\"})",
           "interval": "1m",
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -710,7 +672,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -754,12 +716,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(chia_harvester_plot_filesize{type=\"$PlotType\"})",
@@ -774,7 +736,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -818,12 +780,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(chia_harvester_plot_count{type=\"$PlotType\"})",
@@ -838,7 +800,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -882,17 +844,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "18.75 / ( (sum(chia_harvester_plot_filesize)/1048576) / sum(chia_full_node_netspace_mib) )",
+          "expr": "18.75 / ( (sum(chia_harvester_plot_filesize)/1048576) / avg by (node_id) (sum(chia_full_node_netspace_mib)) )",
           "interval": "1m",
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -902,7 +866,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -948,17 +912,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
           "expr": "increase(chia_farmer_points_acknowledged_since_start[24h])+SL",
           "interval": "1m",
           "legendFormat": "Points",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -968,7 +934,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1012,17 +978,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_node_height",
+          "expr": "avg by (node_id) (chia_full_node_node_height)",
           "interval": "1m",
           "legendFormat": "Height",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1032,7 +1000,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1078,12 +1046,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(chia_full_node_database_filesize)",
@@ -1098,7 +1066,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1144,12 +1112,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(increase(chia_full_node_database_filesize[$__range]))",
@@ -1164,7 +1132,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1209,17 +1177,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "increase(chia_farmer_points_acknowledged_since_start[24h])",
+          "expr": "avg by (node_id) (increase(chia_farmer_points_acknowledged_since_start[24h]))",
           "interval": "1m",
           "legendFormat": "Points",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1229,7 +1199,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1281,19 +1251,22 @@
           "values": false
         },
         "showUnfilled": true,
-        "text": {}
+        "text": {},
+        "valueMode": "color"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(chia_full_node_total_signage_points[5m]) * 60",
+          "expr": "avg by (node_id) (rate(chia_full_node_total_signage_points[5m]) * 60)",
           "interval": "1m",
           "legendFormat": "Challanges",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1303,7 +1276,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1346,19 +1319,22 @@
           "values": false
         },
         "showUnfilled": true,
-        "text": {}
+        "text": {},
+        "valueMode": "color"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_harvester_plot_filesize{type=\"$PlotType\"}",
+          "expr": "avg by (node_id) (chia_harvester_plot_filesize{type=\"$PlotType\"})",
           "interval": "1m",
           "legendFormat": "{{ node_id }} / k{{ size }}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1368,7 +1344,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1413,17 +1389,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_netspace_mib",
+          "expr": "avg by (node_id) (chia_full_node_netspace_mib)",
           "interval": "1m",
           "legendFormat": "Netspace",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1433,7 +1411,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1477,17 +1455,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_difficulty",
+          "expr": "avg by (node_id) (chia_full_node_difficulty)",
           "interval": "1m",
           "legendFormat": "Difficulty",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1497,7 +1477,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1542,18 +1522,20 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "increase(chia_farmer_submitted_partials[24h])",
+          "expr": "avg by (node_id) (increase(chia_farmer_submitted_partials[24h]))",
           "hide": false,
           "interval": "1m",
           "legendFormat": "Submitted partials",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -1563,7 +1545,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1607,17 +1589,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_farmer_points_acknowledged_since_start",
+          "expr": "avg by (node_id) (chia_farmer_points_acknowledged_since_start)",
           "interval": "1m",
           "legendFormat": "Difficulty",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1627,7 +1611,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1671,17 +1655,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_farmer_current_difficulty",
+          "expr": "avg by (node_id) (chia_farmer_current_difficulty)",
           "interval": "1m",
           "legendFormat": "Difficulty",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1691,7 +1677,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -1737,12 +1723,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "chia_num_pool_errors_24h{url=\"$Pool\"}+SL",
@@ -1757,7 +1743,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1801,14 +1787,15 @@
           "values": false
         },
         "showUnfilled": true,
-        "text": {}
+        "text": {},
+        "valueMode": "color"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(rate(chia_harvester_total_eligible_plots[5m])) * 60",
@@ -1823,7 +1810,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1867,14 +1854,15 @@
           "values": false
         },
         "showUnfilled": true,
-        "text": {}
+        "text": {},
+        "valueMode": "color"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "rate(chia_block_challenges_total[5m]) * 60+SL",
@@ -1889,7 +1877,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1932,18 +1920,19 @@
           "values": false
         },
         "showUnfilled": true,
-        "text": {}
+        "text": {},
+        "valueMode": "color"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_harvester_plot_count{type=\"$PlotType\"}",
+          "expr": "avg by (node_id) (chia_harvester_plot_count{type=\"$PlotType\"})",
           "interval": "1m",
           "legendFormat": "{{ node_id }} / k{{ size }}",
           "range": true,
@@ -1956,7 +1945,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1998,15 +1987,16 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "round(avg_over_time(chia_full_node_mempool_size[5m]))",
+          "expr": "avg by (node_id) (round(avg_over_time(chia_full_node_mempool_size[5m])))",
           "instant": false,
           "interval": "1m",
           "intervalFactor": 1,
@@ -2020,7 +2010,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -2064,18 +2054,20 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_mempool_cost/1e12",
+          "expr": "avg by (node_id) (chia_full_node_mempool_cost/1e12)",
           "interval": "1m",
           "intervalFactor": 1,
           "legendFormat": "Mempool Cost",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -2085,7 +2077,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -2123,9 +2115,9 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
-          "fields": "",
+          "fields": "/^Blocks Found$/",
           "values": false
         },
         "text": {
@@ -2133,18 +2125,20 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_farmer_proofs_found",
+          "expr": "sum(chia_farmer_proofs_found)",
           "interval": "1m",
           "intervalFactor": 1,
           "legendFormat": "Blocks Found",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -2154,7 +2148,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -2200,17 +2194,19 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_price_usd_cent/100",
+          "expr": "avg by (node_id) (chia_price_usd_cent/100)",
           "interval": "1m",
           "legendFormat": "XCH Price",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -2220,7 +2216,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -2267,12 +2263,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(chia_price_usd_cent)/100 * (sum(chia_wallet_confirmed_balance)/1e12)",
@@ -2288,7 +2284,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2331,19 +2327,22 @@
           "values": false
         },
         "showUnfilled": true,
-        "text": {}
+        "text": {},
+        "valueMode": "color"
       },
-      "pluginVersion": "8.5.6",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(chia_farmer_submitted_partials[1h]) * 60",
+          "expr": "avg by (node_id) (rate(chia_farmer_submitted_partials[1h]) * 60)",
           "interval": "1m",
           "legendFormat": "Proofs",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -2353,7 +2352,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2361,6 +2360,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -2473,7 +2474,8 @@
             "max"
           ],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
@@ -2485,10 +2487,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "max(chia_harvester_last_lookup_time)",
+          "expr": "avg by (node_id) (max(chia_harvester_last_lookup_time))",
           "hide": false,
           "instant": false,
           "interval": "1m",
@@ -2499,13 +2502,15 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(sum(chia_harvester_last_lookup_time)/count(chia_harvester_last_lookup_time))",
+          "expr": "avg by (node_id) (avg(sum(chia_harvester_last_lookup_time)/count(chia_harvester_last_lookup_time)))",
           "hide": false,
           "interval": "1m",
           "legendFormat": "Average",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -2515,7 +2520,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -2524,6 +2529,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -2561,7 +2568,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "red",
@@ -2619,7 +2627,8 @@
             "max"
           ],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "multi",
@@ -2631,26 +2640,30 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_validation_time",
+          "expr": "avg by (node_id) (chia_full_node_validation_time)",
           "hide": false,
           "interval": "1m",
           "legendFormat": "Block Validation Time",
+          "range": true,
           "refId": "B"
         },
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_full_node_pre_validation_time",
+          "expr": "avg by (node_id) (chia_full_node_pre_validation_time)",
           "hide": false,
           "interval": "1m",
           "intervalFactor": 1,
           "legendFormat": "Pre-validation Time",
+          "range": true,
           "refId": "D"
         }
       ],
@@ -2659,7 +2672,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 36,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [
     "chia"
@@ -2667,10 +2680,14 @@
   "templating": {
     "list": [
       {
-        "current": {},
+        "current": {
+          "selected": true,
+          "text": "pool",
+          "value": "pool"
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "prometheus"
         },
         "definition": "label_values(chia_harvester_plot_filesize, type)",
         "hide": 0,
@@ -2705,6 +2722,6 @@
   "timezone": "",
   "title": "Chia Farm Dashboard",
   "uid": "cryptastic-chia-dashboard",
-  "version": 83,
+  "version": 3,
   "weekStart": ""
 }
