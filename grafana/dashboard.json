@@ -2448,7 +2448,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg by (exported_node_id) (quantile_over_time(0.99, chia_farmer_last_lookup_time{exported_node_id=\"$HarvesterId\"}[$__rate_interval]))",
+          "expr": "avg by (exported_node_id) (quantile_over_time(0.99, chia_farmer_last_lookup_time{exported_node_id=~\"$HarvesterId\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "interval": "",
