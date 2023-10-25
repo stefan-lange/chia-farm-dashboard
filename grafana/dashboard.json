@@ -165,7 +165,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "sum(chia_harvester_plot_filesize{type=\"$PlotType\"})",
+          "expr": "sum(chia_farmer_plot_filesize{type=\"$PlotType\"})",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
@@ -237,7 +237,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "sum(chia_harvester_plot_count{type=\"$PlotType\"})",
+          "expr": "sum(chia_farmer_plot_count{type=\"$PlotType\"})",
           "format": "time_series",
           "interval": "1m",
           "intervalFactor": 2,
