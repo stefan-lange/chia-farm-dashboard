@@ -2407,7 +2407,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "Mimir",
           "value": "mimir_uid"
         },
