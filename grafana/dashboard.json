@@ -2448,7 +2448,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg by (exported_node_id) (chia_farmer_last_lookup_time{exported_node_id=~\"$HarvesterId\"})",
+          "expr": "avg by (exported_node_id) (quantile_over_time(0.99, chia_farmer_last_lookup_time{exported_node_id=\"$HarvesterId\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -2457,7 +2457,7 @@
           "refId": "D"
         }
       ],
-      "title": "Harvester Lookup Times",
+      "title": "Harvester Lookup Times (P99)",
       "type": "timeseries"
     },
     {
