@@ -26,7 +26,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 16456,
   "graphTooltip": 1,
-  "id": 28,
+  "id": 36,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -95,7 +95,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_node_synced",
+          "expr": "sum(chia_full_node_node_synced)",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
@@ -514,7 +514,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{node_type=\"full_node\"}",
+          "expr": "sum(chia_full_node_connection_count{node_type=\"full_node\"})",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
@@ -581,7 +581,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{node_type=\"farmer\"}",
+          "expr": "sum(chia_full_node_connection_count{node_type=\"farmer\"})",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
@@ -648,7 +648,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_connection_count{node_type=\"wallet\"}",
+          "expr": "sum(chia_full_node_connection_count{node_type=\"wallet\"})",
           "interval": "1m",
           "legendFormat": "",
           "refId": "A"
@@ -1242,7 +1242,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "rate(chia_full_node_total_signage_points[5m]) * 60",
+          "expr": "sum(rate(chia_full_node_total_signage_points[5m]) * 60)",
           "interval": "1m",
           "legendFormat": "Challanges",
           "refId": "A"
@@ -2297,7 +2297,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "rate(chia_farmer_submitted_partials[1h]) * 60",
+          "expr": "sum(rate(chia_farmer_submitted_partials[1h]) * 60)",
           "interval": "1m",
           "legendFormat": "Proofs",
           "refId": "A"
@@ -2629,7 +2629,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "Mimir",
           "value": "mimir_uid"
         },
@@ -2675,7 +2675,7 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
