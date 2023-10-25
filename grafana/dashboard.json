@@ -1167,7 +1167,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "increase(chia_farmer_points_acknowledged_since_start[24h])",
+          "expr": "sum(increase(chia_farmer_points_acknowledged_since_start[24h]))",
           "interval": "1m",
           "legendFormat": "Points",
           "refId": "A"
@@ -1567,9 +1567,9 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_farmer_points_acknowledged_since_start",
+          "expr": "sum(chia_farmer_points_acknowledged_since_start)",
           "interval": "1m",
-          "legendFormat": "Difficulty",
+          "legendFormat": "Points",
           "refId": "A"
         }
       ],
