@@ -970,7 +970,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_node_height",
+          "expr": "sum(chia_full_node_node_height)",
           "interval": "1m",
           "legendFormat": "Height",
           "refId": "A"
@@ -1373,7 +1373,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_netspace_mib",
+          "expr": "avg(chia_full_node_netspace_mib)",
           "interval": "1m",
           "legendFormat": "Netspace",
           "refId": "A"
@@ -1437,7 +1437,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_difficulty",
+          "expr": "avg(chia_full_node_difficulty)",
           "interval": "1m",
           "legendFormat": "Difficulty",
           "refId": "A"
@@ -1502,7 +1502,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "increase(chia_farmer_submitted_partials[24h])",
+          "expr": "sum(increase(chia_farmer_submitted_partials[24h]))",
           "hide": false,
           "interval": "1m",
           "legendFormat": "Submitted partials",
@@ -1961,7 +1961,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "round(avg_over_time(chia_full_node_mempool_size[5m]))",
+          "expr": "avg(chia_full_node_mempool_size)",
           "instant": false,
           "interval": "1m",
           "intervalFactor": 1,
@@ -1993,7 +1993,7 @@
               }
             ]
           },
-          "unit": "XCH"
+          "unit": "Number"
         },
         "overrides": []
       },
@@ -2027,7 +2027,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_mempool_cost/1e12",
+          "expr": "avg(chia_full_node_mempool_cost)",
           "interval": "1m",
           "intervalFactor": 1,
           "legendFormat": "Mempool Cost",
