@@ -1631,7 +1631,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_farmer_current_difficulty",
+          "expr": "avg(chia_farmer_current_difficulty)",
           "interval": "1m",
           "legendFormat": "Difficulty",
           "refId": "A"
