@@ -2583,7 +2583,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_validation_time",
+          "expr": "avg(chia_full_node_validation_time)",
           "hide": false,
           "interval": "1m",
           "legendFormat": "Block Validation Time",
@@ -2595,7 +2595,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_full_node_pre_validation_time",
+          "expr": "avg(chia_full_node_pre_validation_time)",
           "hide": false,
           "interval": "1m",
           "intervalFactor": 1,
