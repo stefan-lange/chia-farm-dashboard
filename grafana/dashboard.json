@@ -1308,7 +1308,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_farmer_plot_filesize{type=\"$PlotType\",exported_node_id=~\"$HarvesterId\"}",
+          "expr": "avg by (exported_node_id,size,compression) (chia_farmer_plot_filesize{type=\"$PlotType\",exported_node_id=~\"$HarvesterId\"})",
           "interval": "1m",
           "legendFormat": "k{{ size }}-c{{ compression }} / {{ exported_node_id }}",
           "refId": "A"
@@ -1898,7 +1898,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "chia_farmer_plot_count{type=\"$PlotType\",exported_node_id=~\"$HarvesterId\"}",
+          "expr": "avg by (exported_node_id,size,compression) (chia_farmer_plot_count{type=\"$PlotType\",exported_node_id=~\"$HarvesterId\"})",
           "interval": "1m",
           "legendFormat": "k{{ size }}-c{{ compression }} / {{ exported_node_id }}",
           "range": true,
