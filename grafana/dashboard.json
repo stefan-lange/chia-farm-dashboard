@@ -2394,7 +2394,10 @@
           "text": "pool",
           "value": "pool"
         },
-        "datasource": "$datasource",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
         "definition": "label_values(chia_harvester_plot_filesize, type)",
         "hide": 0,
         "includeAll": false,
@@ -2428,6 +2431,6 @@
   "timezone": "",
   "title": "Chia Farm Dashboard",
   "uid": "cryptastic-chia-dashboard",
-  "version": 6,
+  "version": 12,
   "weekStart": ""
 }
