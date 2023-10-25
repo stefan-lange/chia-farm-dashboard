@@ -26,7 +26,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 16456,
   "graphTooltip": 1,
-  "id": 2,
+  "id": 28,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -55,7 +55,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red"
+                "color": "red",
+                "value": null
               },
               {
                 "color": "green",
@@ -113,7 +114,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue"
+                "color": "blue",
+                "value": null
               }
             ]
           },
@@ -178,7 +180,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue"
+                "color": "blue",
+                "value": null
               }
             ]
           },
@@ -244,7 +247,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -304,7 +308,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -365,7 +370,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#22a6b3"
+                "color": "#22a6b3",
+                "value": null
               }
             ]
           },
@@ -423,7 +429,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red"
+                "color": "red",
+                "value": null
               },
               {
                 "color": "orange",
@@ -487,7 +494,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red"
+                "color": "red",
+                "value": null
               },
               {
                 "color": "green",
@@ -547,7 +555,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red"
+                "color": "red",
+                "value": null
               },
               {
                 "color": "green",
@@ -606,7 +615,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue"
+                "color": "blue",
+                "value": null
               }
             ]
           },
@@ -663,7 +673,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue"
+                "color": "blue",
+                "value": null
               }
             ]
           },
@@ -720,7 +731,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -779,7 +791,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#22a6b3"
+                "color": "#22a6b3",
+                "value": null
               }
             ]
           },
@@ -837,7 +850,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           }
@@ -895,7 +909,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -954,7 +969,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -1012,7 +1028,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#22a6b3"
+                "color": "#22a6b3",
+                "value": null
               }
             ]
           },
@@ -1071,7 +1088,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red"
+                "color": "red",
+                "value": null
               },
               {
                 "color": "orange",
@@ -1138,7 +1156,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue"
+                "color": "blue",
+                "value": null
               }
             ]
           },
@@ -1197,7 +1216,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -1255,7 +1275,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           }
@@ -1312,7 +1333,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -1371,7 +1393,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#22a6b3"
+                "color": "#22a6b3",
+                "value": null
               }
             ]
           }
@@ -1428,7 +1451,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#22a6b3"
+                "color": "#22a6b3",
+                "value": null
               }
             ]
           }
@@ -1486,7 +1510,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#22a6b3"
+                "color": "#22a6b3",
+                "value": null
               }
             ]
           },
@@ -1544,7 +1569,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -1605,7 +1631,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -1664,7 +1691,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue"
+                "color": "blue",
+                "value": null
               }
             ]
           },
@@ -1724,7 +1752,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           }
@@ -1782,7 +1811,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -1842,7 +1872,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "orange"
+                "color": "orange",
+                "value": null
               }
             ]
           },
@@ -1903,7 +1934,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "purple"
+                "color": "purple",
+                "value": null
               }
             ]
           },
@@ -1963,7 +1995,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "purple"
+                "color": "purple",
+                "value": null
               }
             ]
           },
@@ -2022,7 +2055,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -2113,7 +2147,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent"
+                "color": "transparent",
+                "value": null
               },
               {
                 "color": "#EAB839",
@@ -2431,6 +2466,6 @@
   "timezone": "",
   "title": "Chia Farm Dashboard",
   "uid": "cryptastic-chia-dashboard",
-  "version": 12,
+  "version": 1,
   "weekStart": ""
 }
