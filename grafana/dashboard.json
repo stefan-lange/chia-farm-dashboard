@@ -712,7 +712,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "sum(chia_harvester_plot_filesize{type=\"$PlotType\"})",
+          "expr": "sum(chia_farmer_plot_filesize{type=\"$PlotType\"})",
           "interval": "1m",
           "legendFormat": "Plot Size",
           "refId": "A"
@@ -776,7 +776,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "sum(chia_harvester_plot_count{type=\"$PlotType\"})",
+          "expr": "sum(chia_farmer_plot_count{type=\"$PlotType\"})",
           "interval": "1m",
           "legendFormat": "Plot Count",
           "refId": "A"
