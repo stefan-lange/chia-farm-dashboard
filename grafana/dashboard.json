@@ -2348,7 +2348,6 @@
             }
           },
           "mappings": [],
-          "max": 6.5,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -2359,15 +2358,15 @@
               },
               {
                 "color": "#EAB839",
-                "value": 2
+                "value": 10000000
               },
               {
                 "color": "red",
-                "value": 5
+                "value": 19000000
               }
             ]
           },
-          "unit": "s"
+          "unit": "µs"
         },
         "overrides": [
           {
@@ -2447,26 +2446,15 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "max(chia_harvester_last_lookup_time)",
+          "expr": "avg by (exported_node_id) (chia_farmer_last_lookup_time{exported_node_id=~\"$HarvesterId\"})",
           "hide": false,
           "instant": false,
-          "interval": "1m",
+          "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "Max",
+          "legendFormat": "{{ exported_node_id }}",
           "refId": "D"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "exemplar": true,
-          "expr": "avg(sum(chia_harvester_last_lookup_time)/count(chia_harvester_last_lookup_time))",
-          "hide": false,
-          "interval": "1m",
-          "legendFormat": "Average",
-          "refId": "B"
         }
       ],
       "title": "Harvester Lookup Times",
