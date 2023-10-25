@@ -2418,6 +2418,7 @@
         "name": "datasource",
         "options": [],
         "query": "prometheus",
+        "queryValue": "",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2442,6 +2443,34 @@
         "query": {
           "query": "label_values(chia_harvester_plot_filesize, type)",
           "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 2,
+        "type": "query"
+      },
+      {
+        "allValue": ".*",
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
+        "definition": "label_values(chia_farmer_plot_filesize,exported_node_id)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Harvester Id",
+        "multi": false,
+        "name": "HarvesterId",
+        "options": [],
+        "query": {
+          "query": "label_values(chia_farmer_plot_filesize,exported_node_id)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
         "regex": "",
