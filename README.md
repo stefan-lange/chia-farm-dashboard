@@ -6,7 +6,7 @@ connected harvesters, collected by the official
 unofficial [Chia Price Exporter](https://github.com/stefan-lange/chia-price-exporter/) is required.
 
 This dashboard is based on the great work made by [Philipp Normann](https://github.com/philippnormann/chia-monitor) and
-available under https://grafana.com/grafana/dashboards/16456
+available under <https://grafana.com/grafana/dashboards/16456>
 
 <img src="doc/screenshot.png" alt="Screenshot">
 
@@ -14,7 +14,7 @@ available under https://grafana.com/grafana/dashboards/16456
 
 ## Configuration
 
-A working [Chia Exporter](https://github.com/Chia-Network/chia-exporter/)
+A working [Chia Exporter](https://github.com/Chia-Network/chia-exporter/) (version `>= 0.10.0`)
 and [Chia Price Exporter](https://github.com/stefan-lange/chia-price-exporter/) is required.
 
 ### Example: chia farms using a reverse proxy to limit open ports
