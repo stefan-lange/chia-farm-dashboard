@@ -2711,7 +2711,7 @@
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
-        "regex": "(?<value>chia_price_(?<text>.*))",
+        "regex": "(?<value>chia_price_(?<text>\\S+)_\\S+)",
         "skipUrlSync": false,
         "sort": 1,
         "type": "query"
