@@ -2687,6 +2687,38 @@
         "skipUrlSync": false,
         "sort": 2,
         "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "btc",
+          "value": "10000000000"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "PriceCorrectionFactor",
+        "options": [
+          {
+            "selected": false,
+            "text": "usd",
+            "value": "100"
+          },
+          {
+            "selected": false,
+            "text": "eur",
+            "value": "100"
+          },
+          {
+            "selected": true,
+            "text": "btc",
+            "value": "10000000000"
+          }
+        ],
+        "query": "usd : 100, eur : 100, btc : 10000000000",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
       }
     ]
   },
