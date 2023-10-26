@@ -1765,7 +1765,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "sum(rate(chia_harvester_total_eligible_plots[5m])) * 60",
+          "expr": "sum(rate(chia_farmer_total_eligible_plots[5m])) * 60",
           "interval": "1m",
           "legendFormat": "Filters Passed",
           "refId": "A"
