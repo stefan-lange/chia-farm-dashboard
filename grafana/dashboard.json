@@ -2163,7 +2163,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "chia_price_usd_cent/100",
+          "expr": "avg({__name__=~\"$PriceCurrency\"})/($PriceCorrectionFactor)",
           "interval": "1m",
           "legendFormat": "XCH Price",
           "refId": "A"
@@ -2689,10 +2689,38 @@
         "type": "query"
       },
       {
+        "allValue": ".*",
         "current": {
           "selected": true,
-          "text": "btc",
-          "value": "10000000000"
+          "text": "eur_cent",
+          "value": "chia_price_eur_cent"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
+        "definition": "metrics(chia_price_.*)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Currency",
+        "multi": false,
+        "name": "PriceCurrency",
+        "options": [],
+        "query": {
+          "query": "metrics(chia_price_.*)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "(?<value>chia_price_(?<text>.*))",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "eur",
+          "value": "100"
         },
         "hide": 0,
         "includeAll": false,
@@ -2710,7 +2738,7 @@
             "value": "100"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "btc",
             "value": "10000000000"
           }
