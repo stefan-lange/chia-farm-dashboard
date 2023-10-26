@@ -375,9 +375,9 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "sum(chia_wallet_confirmed_balance)/1e12",
+          "expr": "sum by(fingerprint) ((chia_wallet_confirmed_balance{wallet_type=\"0\"})/1e12)",
           "interval": "1m",
-          "legendFormat": "Balance",
+          "legendFormat": "Wallet {{ fingerprint }}",
           "refId": "A"
         }
       ],
