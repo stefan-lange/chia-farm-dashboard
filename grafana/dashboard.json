@@ -1182,6 +1182,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
+      "description": "Target 6.4 SPs per minute, 1 SP should occur every 9.375s",
       "fieldConfig": {
         "defaults": {
           "color": {
