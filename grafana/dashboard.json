@@ -2624,8 +2624,8 @@
         "allValue": ".*",
         "current": {
           "selected": true,
-          "text": "eur_cent",
-          "value": "chia_price_eur_cent"
+          "text": "usd_cent",
+          "value": "chia_price_usd_cent"
         },
         "datasource": {
           "type": "prometheus",
@@ -2651,7 +2651,7 @@
       {
         "current": {
           "selected": true,
-          "text": "eur",
+          "text": "usd",
           "value": "100"
         },
         "hide": 0,
@@ -2661,8 +2661,13 @@
         "options": [
           {
             "selected": false,
-            "text": "usd",
-            "value": "100"
+            "text": "btc",
+            "value": "100000000"
+          },
+          {
+            "selected": false,
+            "text": "eth",
+            "value": "1000000000"
           },
           {
             "selected": false,
@@ -2670,9 +2675,9 @@
             "value": "100"
           },
           {
-            "selected": false,
-            "text": "btc",
-            "value": "10000000000"
+            "selected": true,
+            "text": "usd",
+            "value": "100"
           }
         ],
         "query": "usd : 100, eur : 100, btc : 10000000000",
