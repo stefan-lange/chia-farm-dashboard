@@ -2230,7 +2230,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "sum by(fingerprint) (avg({__name__=~\"$PriceCurrency\"})/($PriceCorrectionFactor) * (sum(chia_wallet_confirmed_balance{wallet_type=\"0\"})/1e12))",
+          "expr": "avg by(fingerprint) (avg({__name__=~\"$PriceCurrency\"})/($PriceCorrectionFactor) * (sum(chia_wallet_confirmed_balance{wallet_type=\"0\"})/1e12))",
           "format": "time_series",
           "interval": "1m",
           "legendFormat": "Wallet {{ fingerprint }}",
