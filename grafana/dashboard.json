@@ -375,7 +375,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "avg(chia_farmer_proofs_found)",
+          "expr": "sum(last_over_time(chia_farmer_proofs_found[$__range]))",
           "interval": "1m",
           "intervalFactor": 1,
           "legendFormat": "Blocks Found",
