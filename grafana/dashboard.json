@@ -2680,7 +2680,7 @@
             "value": "100"
           }
         ],
-        "query": "usd : 100, eur : 100, btc : 10000000000",
+        "query": "btc : 100000000, eth : 1000000000, eur : 100, usd : 100",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
