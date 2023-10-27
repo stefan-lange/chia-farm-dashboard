@@ -2578,14 +2578,14 @@
           "type": "prometheus",
           "uid": "${datasource}"
         },
-        "definition": "label_values(chia_harvester_plot_filesize, type)",
+        "definition": "label_values(chia_farmer_plot_filesize, type)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "PlotType",
         "options": [],
         "query": {
-          "query": "label_values(chia_harvester_plot_filesize, type)",
+          "query": "label_values(chia_farmer_plot_filesize, type)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
