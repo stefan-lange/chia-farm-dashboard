@@ -1979,7 +1979,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "",
+      "description": "Once the mempool is full (100%), a fee is required to kick other lower fee transactions out to get your transaction included in the mempool.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1995,7 +1995,7 @@
               }
             ]
           },
-          "unit": "Number"
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -2028,15 +2028,17 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(chia_full_node_mempool_cost)",
+          "expr": "avg(chia_full_node_mempool_cost)/550000000000",
           "interval": "1m",
           "intervalFactor": 1,
           "legendFormat": "Mempool Cost",
+          "range": true,
           "refId": "A"
         }
       ],
-      "title": "Mempool Cost",
+      "title": "Mempool Capacity Used",
       "type": "stat"
     },
     {
