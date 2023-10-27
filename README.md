@@ -17,13 +17,18 @@ available under <https://grafana.com/grafana/dashboards/16456>
 A working [Chia Exporter](https://github.com/Chia-Network/chia-exporter/) (version `>= 0.10.0`)
 and [Chia Price Exporter](https://github.com/stefan-lange/chia-price-exporter/) is required.
 
-### Example: chia farms using a reverse proxy to limit open ports
+Since v0.10.0, the chia-exporter uses the new farming protocol. It is now possible to retrieve basic harvester metrics
+via the farmer, which simplifies the whole setup. Chia-exporter must be installed `only` next to the farmer, not on
+every harvester node.
 
-In this example, metrics are available with the following endpoints:
+### Scenario: chia farm with farmer and multiple harvesters
 
-- `<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>`:9914/price/metrics
-- `<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>`:9914/farmer/metrics
-- `<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>`:9914/harvester-1/metrics
+Prerequisites:
+
+- installed chia farmer
+- installed chia harvester(s)
+- installed chia-exporter on farmer host
+- installed chia-price-exporter 'somewhere' (or on the farmer host)
 
 Add a block to the `scrape_configs` of your `prometheus.yml` config file:
 
@@ -31,27 +36,13 @@ Add a block to the `scrape_configs` of your `prometheus.yml` config file:
 scrape_configs:
     -   job_name: 'chia-price-exporter'
         scrape_interval: 60s
-        metrics_path: /price/metrics
         static_configs:
-            -   targets: [ '<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>:9914' ]
+            -   targets: [ '<<CHIA-PRICE-EXPORTER-HOST>>:9952' ]
 
-    -   job_name: 'chia-exporter_farmer'
-        scrape_interval: 15s
-        metrics_path: /farmer/metrics
+    -   job_name: 'chia-farmer'
+        scrape_interval: 30s
         static_configs:
-            -   targets: [ '<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>:9914' ]
-                labels:
-                    application: 'chia-blockchain'
-                    node_id: 'farmer'
-
-    -   job_name: 'chia-exporter_harvester-1'
-        scrape_interval: 15s
-        metrics_path: /harvester-1/metrics
-        static_configs:
-            -   targets: [ '<<CHIA-FARM-REVERSE-PROXY-HOSTNAME>>:9914' ]
-                labels:
-                    application: 'chia-blockchain'
-                    node_id: 'harvester-1'
+            -   targets: [ '<<CHIA-FARMER-HOST>>:9914' ]
 ```
 
-Adjust the host name accordingly.
+Adjust the hosts accordingly. Use the `ip` or `hostname`.
